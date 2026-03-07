@@ -30,7 +30,6 @@
 - sum() 함수와 len() 함수를 활용하세요
 - 리스트 컴프리헨션을 사용하면 간결하게 작성할 수 있습니다
 """
-
 def find_above_average_students(students):
     """
     평균 점수 이상인 학생들을 찾는 함수
@@ -42,15 +41,34 @@ def find_above_average_students(students):
         tuple: (평균 점수, 평균 이상 학생 이름 리스트)
     """
     # TODO: 모든 학생의 점수를 리스트로 추출하세요
-    pass
+    scoreList = []
+
+    for student in students:
+        scoreList.append(student['score'])
+
+    print(scoreList)
+    # pass
     
     # TODO: 평균 점수를 계산하세요
-    pass
+    studentCount = 0
+    score = 0
+
+    for student in students:
+        score += student['score']
+        studentCount += 1
+
+    avg = score / studentCount 
     
     # TODO: 평균 이상인 학생들의 이름을 리스트로 추출하세요
-    pass
+    # pass
+    avgOverStudent = []
+
+    for student in students:
+        if student['score'] > avg:
+            avgOverStudent.append(student['name'])
     
-    return average, above_average_students
+    return avg, avgOverStudent
+
 
 # 테스트 케이스
 if __name__ == "__main__":
@@ -77,5 +95,3 @@ if __name__ == "__main__":
     avg, students = find_above_average_students(students2)
     print(f"평균 점수: {avg}")
     print(f"평균 이상 학생: {students}")
-
-
