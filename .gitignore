@@ -72,6 +72,9 @@ venv.bak/
 .coverage
 htmlcov/
 
+# 자동화 파일
+SW-AI-ISSUE-TEMPLATE
+
 # mypy
 .mypy_cache/
 .dmypy.json
@@ -93,5 +96,3 @@ dmypy.json
 *.swp
 *.swo
 *~
-
-SW-AI-ISSUE-TEMPLATE
