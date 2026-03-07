@@ -47,38 +47,29 @@ import copy
 # 구현 방법이 그러니까..
 
 
-a = [
+matrix = [
     [1,2,3],
     [4,5,6],
     [7,8,9]
 ]
-b = a
 
-a = 3
+length = len(matrix)
 
-print(b)
+def rotate(matrix):
+    length = len(matrix)
+    original = copy.deepcopy(matrix)
 
-# matrix = [1,2,3]
-# #     [4,5,6],
-# #     [7,8,9]
-# # ]
-# copied_list = copy.deepcopy(matrix)
+    # 가로
+    for i in range(length):
+        # 세로
+        for j in range(length):
+            change = length - 1 - i
+            matrix[j][change] = original[i][j]
 
-# # 내가 해야할 것 => 깊은 복사
+    return matrix
 
 
-# def rotate(matrix):
-#     length = len(matrix)
-#     manuscripts = copy.deepcopy(matrix)
-
-#     for num in enumerate(range(length)):
-#         print(num)
-#         # for j in range(length):
-#         #     print(i, j)
-#         #     change = length - 1 - i
-#         #     matrix[j][change] = copy.deepcopy(manuscripts[j][change])
-
-# rotate(matrix)
+print(rotate(matrix))
 
 # print(matrix)
             
