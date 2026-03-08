@@ -26,6 +26,12 @@
 - i < j 조건을 유지하여 중복을 방지하세요
 """
 
+# nums = 배열형
+# target = 목표의 합
+
+
+
+
 def find_two_sum_pairs(nums, target):
     """
     배열에서 합이 target이 되는 모든 인덱스 쌍 찾기
