@@ -48,7 +48,7 @@ for i in range(0, theClass):
 
     result.append(overAvg / studentCount * 100)
     
-for i in range(0, i):
+for i in range(0, len(result)):
     print("{:.3f}".format(result[i]), "%", sep='')
 
     # 평균 얻었음.
