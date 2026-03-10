@@ -32,13 +32,15 @@ def factorial(n):
     Returns:
         n의 팩토리얼 값
     """
-    # TODO: base case를 작성하세요
-    # n이 0이거나 1이면 1을 반환
-    pass
+    if n == 0:
+        return 1
     
-    # TODO: recursive case를 작성하세요
-    pass
+    result = factorial(n-1)
+    return result * n
 
+# 피보나치의 남은 횟수를 전달해주면 되지 않을까
+# fib(n) = fib(n-1) - , ...
+# 마찬가지로 0이 return값
 def fibonacci(n):
     """
     재귀를 사용한 피보나치 수 계산
@@ -49,10 +51,23 @@ def fibonacci(n):
     Returns:
         n번째 피보나치 수
     """
-    # TODO: base case를 작성하세요
-    # n이 0이면 0, n이 1이면 1 반환
-    pass
+    if n <= 0:
+        return 0
     
+    if n == 1:
+        return 1
+    # 상위 피보나치의 n에는 앞에 번호가,
+    # 현 위치의 n에는 지금 번호가 있잖아.
+    # 핍0의 경우엔 0이고,
+    # 핍1의 경우엔 1이니까
+    # 핍2은 1이 있어야 하고
+    # 핍 3의 경우엔 있어야 할 값이 2. 왜냐면 pib(2) + pib(1) == pib(3)이니까
+
+    # 피보나치에서 값을 어떻게 반환할건데?
+    result = fibonacci(n-1) + fibonacci(n-2)
+    return result
+    # 이게 맞나?
+
     # TODO: recursive case를 작성하세요
     pass
 
@@ -76,5 +91,3 @@ if __name__ == "__main__":
     print("=== 추가 테스트 ===")
     print(f"10! = {factorial(10)}")
     print(f"fib(15) = {fibonacci(15)}")
-
-
