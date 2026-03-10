@@ -17,7 +17,6 @@
 입력: nums = [2, 7, 11, 15, 3], target = 9
 출력: [(0, 1), (0, 4)]
 설명: nums[0] + nums[1] = 2 + 7 = 9
-      nums[0] + nums[4] = 2 + 7 = 9 (중복이지만 인덱스가 다름)
 
 실제로는: nums[0] + nums[1] = 2 + 7 = 9만 해당
 
@@ -45,11 +44,19 @@ def find_two_sum_pairs(nums, target):
     """
     pairs = []
     n = len(nums)
+
+    for i in range(0, n-1):
+        for j in range(i+1, n):
+            if nums[i] + nums[j] == target:
+                pairs.append((i, j))
     
     # TODO: 이중 반복문으로 모든 쌍을 확인하세요
     ## 외부 반복문: i는 0부터 n-1까지
     ## 내부 반복문: j는 i+1부터 n까지 (중복 방지)
     ## nums[i] + nums[j]가 target과 같으면 (i, j)를 결과에 추가
+
+    # 엣지케이스 겸, 배운거
+    # 이거 리스트가 아니라 튜플임
     pass  
     
     return pairs
@@ -81,5 +88,3 @@ if __name__ == "__main__":
     print(f"배열: {nums3}")
     print(f"목표 합: {target3}")
     print(f"결과 쌍: {result3}")
-
-
