@@ -33,6 +33,16 @@ def bubble_sort(arr):
         정렬된 배열
     """
     n = len(arr)
+
+    # 마지막 숫자는 알아서 정렬되니까 -1
+    for i in range(0, n-1):
+        # i가 일 한 횟수만큼 뒤에는 일 할 필요가 없어져서 n - i - 1
+        for j in range(0, n-i-1):
+            # 이제 j로 인접한 수 비교하면 됨.
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+
+            
     
     # TODO: 외부 반복문 - n-1번 반복
     # 각 패스마다 가장 큰 원소가 끝으로 이동
@@ -57,17 +67,16 @@ def bubble_sort_optimized(arr):
     """
     n = len(arr)
     
-    for i in range(n):
+    for i in range(0, n-1):
         swapped = False  # 교환 발생 여부
-        
-        # TODO: 내부 반복문과 교환 로직 구현
-        # 교환이 발생하면 swapped = True 설정        
-        pass
-        
+        for j in range(0, n-1-i):
+            if arr[j] > arr[j+1]:
+                swapped = True
+                arr[j], arr[j+1] = arr[j+1], arr[j]
 
-        # TODO: 교환이 없으면 이미 정렬된 것이므로 break
-        pass
-
+        if swapped == False:
+            break
+        
     return arr
 
 # 테스트 케이스
