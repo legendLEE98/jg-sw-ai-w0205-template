@@ -23,6 +23,7 @@
 """
 
 def combinations(n, k):
+    # 4랑 2를 가정
     """
     1부터 n까지 숫자 중 k개를 선택하는 모든 조합 찾기
     
@@ -43,15 +44,34 @@ def combinations(n, k):
             start: 탐색을 시작할 숫자
             current_combination: 현재까지 선택한 숫자들
         """
+        # 어차피 함수 입력값은 1부터 시작하는거고
+        # start에 1 더해서 return 시켜주면 되는거고.
+        # 만약 K값과 curCombination의 길이가 같다면면
+        if k == len(current_combination):
+            result.append(current_combination.copy())
+            return result
+
         # TODO: base case - k개를 모두 선택했으면 결과에 추가
         pass
-        
+
+        # 딱 여기까지가, start 값에 따라서 재시도하는 로직까지 완성 된건데,
+        for i in range(start, n+1):
+            current_combination.append(i)
+            backtrack(i+1, current_combination)
+            current_combination.pop()
+            # start = 시작 숫자잖아.
+            # cur_combi에 담을 숫자 마련해야 하고,
+            # start + 1 / 담을 숫자를 인자값으로 해서 재귀 돌리면 됨
+            # 마지막으로 넣은 값 하나를 팝해서 새로 대입해야 하니까 pop 갈기고. 
+
+        # 백트랙 지나가면
+        #  
+
         # TODO: start부터 n까지 숫자를 하나씩 시도
         ## TODO: 백트랙킹 3단계 구현
         ## 1. 선택(Choose)
         ## 2. 탐색(Explore)
         ## 3. 취소(Unchoose)
-        pass
     
     backtrack(1, [])
     return result
