@@ -26,7 +26,7 @@
 def find_max_divide_conquer(arr, left, right):
     """
     분할 정복으로 최댓값 찾기
-    
+     
     Args:
         arr: 배열
         left: 시작 인덱스
@@ -35,20 +35,33 @@ def find_max_divide_conquer(arr, left, right):
     Returns:
         최댓값
     """
+    if left == right:
+        return arr[left]
+
+    mid = (left + right) // 2
     # TODO: base case - 원소가 하나면 그 값 반환
     pass
     
     # TODO: 중간 지점 계산
-    pass
     
-    # TODO: 왼쪽 절반의 최댓값
     pass
-        
+    left = find_max_divide_conquer(arr, left, mid)
+    right = find_max_divide_conquer(arr, mid + 1, right)
+
+    # 왼쪽 계산 (계속 잘라 나가야 함.)
+    # 함수를 계속 부른다면?
+    # 나중엔 arr[0]을 부르겠지?
+    # 그럼 기대값이 list라고 가정해야겠고
+    pass
+
     # TODO: 오른쪽 절반의 최댓값
     pass
     
     # TODO: 둘 중 큰 값 반환
-    pass
+    if left >= right:
+        return left
+    else:
+        return right
 
 # 테스트 케이스
 if __name__ == "__main__":
