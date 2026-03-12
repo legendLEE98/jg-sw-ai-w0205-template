@@ -33,15 +33,35 @@ def binary_search(arr, target):
     Returns:
         target의 인덱스 (없으면 -1)
     """
+
     left = 0
     right = len(arr) - 1
-    
+
     # TODO: left가 right보다 작거나 같을 때까지 반복
     ## 중간 인덱스 계산
     ## arr[mid]와 target 비교
     ## 같으면 mid 반환
     ## target이 더 크면 left = mid + 1
     ## target이 더 작으면 right = mid - 1
+
+    # arr[i/2] = arr, target으로 전달하면 될 듯?
+    # -1이라고 했으니까, 
+    # 일단 절반의 값을 추적해야 함.
+    
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        # 중앙값이 타겟보다 클 때
+        elif arr[mid] > target:
+            right = mid - 1
+        elif arr[mid] < target:
+        # 중앙값이 타겟보다 작을 때
+            left = mid + 1
+
+
+    
+
     pass
     
     return -1
