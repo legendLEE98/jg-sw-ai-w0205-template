@@ -35,26 +35,46 @@ class ListNode:
 
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        currentl1 = l1.val
-        currentl2 = l2.val
+        default = ListNode(0)
+        current = default
 
-        result = []
-        # for문 밖
+        current1 = l1
+        current2 = l2
+
         carry = 0
-        for i in range(max(l1, l2)):
-            currentValue = currentl1 + currentl2 + carry
+        while current1 is not None or current2 is not None or carry != 0:
+            # 삼항연산자 로직
+            # value1 = current1.val if current1 is not None else 0
+            # value2 = current2.val if current2 is not None else 0
+            
+            if current1.val is not None:
+                value1 = current1.val
+            else:
+                value1 = 0
 
-            if currentValue >= 10:
+            if current2.val is not None:
+                value2 = current2.val
+            else:
+                value2 = 0
+
+            value = value1 + value2 + carry
+            carry = 0
+            if value >= 10:
+                value -= 10
                 carry += 1
-                currentValue -= 10
             
-            currentl1 = currentl1.next
-            currentl2 = currentl2.next
+            current.next = ListNode(value)
+            current = current.next
 
-            result.append(currentValue)
+            current1 = current1.next if current is not None else None
+            current2 = current2.next if current is not None else None
+
+        return default.next
+
             
+
         
-        # 링크드 리스트의 특성
+        # 링크드 리스트의 특성,
         # 처음 값 부터 시작 함.
 
         # ListNode{val: 4, next: ListNode{val: 3, next: None}}
