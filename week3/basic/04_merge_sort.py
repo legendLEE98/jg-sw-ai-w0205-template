@@ -37,7 +37,7 @@ def merge(arr, left, mid, right):
     arrRight = arr[mid:right+1]
     pass
     
-    # TODO: 두 배열을 병합 < ???
+    # TODO: 두 배열을 병합
     i = 0
     j = 0
     k = left

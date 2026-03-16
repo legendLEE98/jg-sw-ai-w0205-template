@@ -71,8 +71,6 @@ class Solution:
 
         return default.next
 
-            
-
         
         # 링크드 리스트의 특성,
         # 처음 값 부터 시작 함.
