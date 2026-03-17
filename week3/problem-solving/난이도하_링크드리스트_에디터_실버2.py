@@ -31,3 +31,9 @@
 # 첫째 줄에 모든 명령어를 수행하고 난 후 편집기에 입력되어 있는 문자열을 출력한다.
 
 # 이거 연결리스트를 양옆으로 이어 붙이면 될 거 같은데?
+
+class Node:
+    def __init__(self, val):
+        self.data = val
+        self.prev = None
+        self.next = None
