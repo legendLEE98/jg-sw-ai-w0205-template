@@ -13,3 +13,35 @@
 
 # 출력
 # M개의 줄에 답을 출력한다. 존재하면 1을, 존재하지 않으면 0을 출력한다.
+
+
+value1 = int(input())
+l1 = list(map(int, input().split()))
+value2 = int(input())
+l2 = list(map(int, input().split()))
+
+l1.sort()
+
+def binary_search(arr, target):
+    left = 0
+    right = len(arr) - 1
+
+    while left <= right:
+        mid = (left + right) // 2
+
+        if arr[mid] == target:
+            return str(mid)
+        elif arr[mid] < target:
+            left = mid + 1
+        elif arr[mid] > target:
+            right = mid - 1
+
+result = []
+for i in range(len(l2)):
+    if binary_search(l1, l2[i]):
+        result.append(1)
+    else:
+        result.append(0)
+
+for i in range(len(result)):
+    print(result[i])

@@ -22,5 +22,20 @@
 # 출력
 # 첫째 줄에 남게 되는 카드의 번호를 출력한다.
 
-# 재귀함수 쓰면 될 거 같음
-# 위치 서로 바꾸고, 첫 번째거 pop하면 될듯
+from collections import deque
+
+card = int(input())
+cardList = deque()
+
+for i in range(0, card):
+    cardList.append(i+1)
+count = 0
+while len(cardList) != 1:
+    if count % 2 == 0:
+        cardList.popleft()
+    if count % 2 == 1:
+        cardList.append(cardList[0])
+        cardList.popleft()
+    count += 1
+
+print(cardList[0])

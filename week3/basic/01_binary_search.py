@@ -58,12 +58,6 @@ def binary_search(arr, target):
         elif arr[mid] < target:
         # 중앙값이 타겟보다 작을 때
             left = mid + 1
-
-
-    
-
-    pass
-    
     return -1
 
 # 테스트 케이스

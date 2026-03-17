@@ -45,4 +45,3 @@ for i in range(0, order):
         result = result + "0"
         stackTop.append([i+1, height[i]])
         continue
-    

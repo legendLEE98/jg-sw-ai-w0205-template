@@ -22,7 +22,26 @@
 # 출력
 # 첫째 줄에 비밀번호의 길이와 가운데 글자를 출력한다. 항상 답이 유일한 경우만 입력으로 주어진다.
 
-# 뒤로 돌려서 리스트에 보관함.
-# 체크했는데 앞 뒤 같으면 해당 문제가 답
+pwdCount = int(input())
 
-# 다르면 일단 리스트에 보관만
+pwdList = {}
+for _ in range(pwdCount):
+    userInput = input()
+    pwdList[userInput] = userInput[::-1]
+
+for plain, reverse in pwdList.items():
+    length = len(plain)
+
+    # 조건 1
+    # 현재 밸류를 뒤집으면 같은 언어인지 확인
+    if plain == reverse:
+        print(length)
+        print(plain[length // 2])
+        break
+    
+    # 조건 2
+    # 현재 밸류와 키가 같은 애 찾기
+    if reverse in pwdList:
+        print(length)
+        print(plain[length // 2])
+        break
