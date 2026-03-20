@@ -97,6 +97,7 @@ def postorder(root):
     
     # TODO: 오른쪽 서브트리 순회
     result += postorder(root.right)
+    
 
     pass
     
