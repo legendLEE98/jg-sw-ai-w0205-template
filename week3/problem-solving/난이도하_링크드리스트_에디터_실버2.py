@@ -37,3 +37,15 @@ class Node:
         self.data = val
         self.prev = None
         self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        # TODO
+        # 왼쪽이랑 오른쪽 엮어서 새로 만드는 기능 추가해야 함.
+        pass
+    def curCoord(self):
+        # 현 위치 파악하는 코드?
+        pass
