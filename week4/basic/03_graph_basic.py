@@ -41,13 +41,17 @@ def create_graph(vertices, edges, directed=False):
         그래프 딕셔너리
     """
     # TODO: 빈 그래프 초기화
+    graph = {i:[] for i in range(0, vertices)}
     pass
     
     # TODO: 간선 추가
+    for u, v in edges:
+        graph[u].append(v)
+
     ## 간선 추가 (u에서 v로)
+        if not directed:
+            graph[v].append(u)
     ## 무방향 그래프면 반대 방향도 추가
-    pass
-    
     return graph
 
 # 테스트 케이스
@@ -67,5 +71,3 @@ if __name__ == "__main__":
     graph_directed = create_graph(vertices, edges, directed=True)
     for vertex, neighbors in graph_directed.items():
         print(f"{vertex} → {neighbors}")
-
-
