@@ -65,5 +65,3 @@ if __name__ == "__main__":
     print("=== 프린터 작업 처리 ===")
     result2 = process_print_queue(jobs2)
     print(f"처리 완료: {result2}")
-
-

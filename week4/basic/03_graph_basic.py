@@ -46,12 +46,13 @@ def create_graph(vertices, edges, directed=False):
     
     # TODO: 간선 추가
     for u, v in edges:
+        ## 간선 추가 (u에서 v로)
         graph[u].append(v)
 
-    ## 간선 추가 (u에서 v로)
+        ## 무방향 그래프면 반대 방향도 추가
         if not directed:
             graph[v].append(u)
-    ## 무방향 그래프면 반대 방향도 추가
+            
     return graph
 
 # 테스트 케이스
