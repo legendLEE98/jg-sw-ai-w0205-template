@@ -33,9 +33,8 @@ def dfs(param_graph, param_start, visited = None):
         dfs(param_graph, neighbor, visited)
 
 
-    result = " ".join(map(str, visited))
-
-    return result
+    
+    return " ".join(map(str, visited))
 
 
 def bfs(param_graph, param_start):
@@ -45,7 +44,7 @@ def bfs(param_graph, param_start):
     visited.append(param_start)
 
     # 스타트 노드가 들어있을 때만 반복
-    while startNode:
+    while startNode: 
         curNode = startNode.popleft()
         # 현재 잡고 있는 노드 중, 연결돼있는 모든 노드 탐색
         for neighbor in param_graph[curNode]:
@@ -54,9 +53,7 @@ def bfs(param_graph, param_start):
                 visited.append(neighbor)
                 startNode.append(neighbor)
 
-    result = " ".join(map(str, visited))
-
-    return result
+    return " ".join(map(str, visited))
 
 
 print(dfs(graph, start))
