@@ -62,8 +62,11 @@ def make_change_greedy(change, coins):
 
     # 이 방법 말고 다른방법이 더 효율적이라고 함
 
+    # 코인들 갯수만큼 반복
     for coin in coins:
+        # coin 크기의 밸류는 change // coin 했을 때 몇 번 나눠지는지 계산
         result[coin] = change // coin
+        # change는 coin 나누고 나머지
         change %= coin
     
     for coin in coins:
