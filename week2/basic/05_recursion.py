@@ -93,4 +93,4 @@ if __name__ == "__main__":
     # 추가 테스트
     print("=== 추가 테스트 ===")
     print(f"10! = {factorial(10)}")
-    print(f"fib(15) = {fibonacci(15)}")
+    print(f"fib(30) = {fibonacci(30)}")
