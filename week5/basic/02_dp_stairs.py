@@ -35,6 +35,7 @@ DP 문제 풀이 순서:
 5. 구현 및 검증
 """
 
+# 일반적으로 이게 방법이 안떠오르니까 리커젼 방식으로 먼저 풀어보기.
 def climb_stairs(n):
     """
     계단 오르기 (상향식 DP)
@@ -45,16 +46,37 @@ def climb_stairs(n):
     Returns:
         n번째 계단까지 오르는 방법의 수
     """
-    # TODO: 특별한 경우 처리
-    pass
+    # 리커젼 방식
+    # if n < 0:
+    #     return 0
+
+    # if n == 0 or n == 1:
+    #     return 1
     
+    # result = climb_stairs(n-1) + climb_stairs(n-2)
+    
+    # 이 방식은 리커젼 방식이고, Top down 형태를 갖고 있음.
+
+    # return result
+
+    # 찾아 보니까, 1단계랑 2단계 정도는 정의 해주고,
+    # for문으로 밑에서부터 반복문으로 올리는 과정을 취해주면 좋을 듯.
+
+    # TODO: 특별한 경우 처리
+    if n == 1:
+        return 1
+    if n == 2:
+        return 2
     
     # TODO: dp 배열 생성 및 초기화
-    pass
+    dp = [0] * (n + 1)
+    dp[1] = 1
+    dp[2] = 2
     
     # TODO: 작은 문제부터 차례로 계산
-    pass
-    
+    for i in range(3, n+1):
+        dp[i] = dp[i-1] + dp[i-2]
+
     return dp[n]
 
 # 테스트 케이스
@@ -79,5 +101,3 @@ if __name__ == "__main__":
     print("3. 1+2+1")
     print("4. 2+1+1")
     print("5. 2+2")
-
-
