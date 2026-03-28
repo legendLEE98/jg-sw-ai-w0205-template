@@ -41,12 +41,12 @@ def select_meetings(meetings:list):
     pass
     
     selected = []
-    
+
     # TODO: 첫 번째 회의 선택
     time = 0
     # TODO: 나머지 회의들 확인
     for start, end in meetings:
-        if start <= time:
+        if start < time:
             continue
 
         selected.append([start, end])
