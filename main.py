@@ -1,19 +1,18 @@
-# 실험 케이스
-testCase = int(input())
+nums = [1,2,3,1]
 
-# 잔돈
-change = []
-# 동전 종류
-coins = [25, 10, 5 ,1]
-result = [[] for _ in range(testCase)]
+max1 = 0
+max2 = 0
 
-for _ in range(testCase):
-    change.append(int(input()))
+n = len(nums)
 
-for i in range(testCase):
-    for j in range(len(coins)):
-        result[i].append(change[i] // coins[j])
-        change[i] = change[i] % coins[j]
+if n % 2 == 0:
+    for i in range(0, len(nums) // 2):
+        max1 += (nums[i * 2])
+        max2 += (nums[(i * 2) + 1])
+if n % 2 == 1:
+    for i in range(0, (len(nums) // 2) + 1):
+        max1 += (nums[i * 2])
+        max2 += (nums[(i * 2) - 1])
 
-for i in range(len(result)):
-    print(" ".join(map(str, result[i])))
+print(max1)
+print(max2)
