@@ -1,18 +1,21 @@
-nums = [1,2,3,1]
+wordDict = ["leet", "code"]
+s = "leetcode"
 
-max1 = 0
-max2 = 0
+result = []
+start = 0
+value = 0
+word = ""
+for i in range(len(s)):
+    for j in range(start, i + 1):
+        word += s[j]
+        print(word)
 
-n = len(nums)
+        if word == wordDict[value]:
+            start = i - 1
+            value += 1
+            result.append(word)
+        
+    word = ""
 
-if n % 2 == 0:
-    for i in range(0, len(nums) // 2):
-        max1 += (nums[i * 2])
-        max2 += (nums[(i * 2) + 1])
-if n % 2 == 1:
-    for i in range(0, (len(nums) // 2) + 1):
-        max1 += (nums[i * 2])
-        max2 += (nums[(i * 2) - 1])
-
-print(max1)
-print(max2)
+print(result)
+# for i in range(len(s)):
